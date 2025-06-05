@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS-variabler för färgpaletten (Dark Mode hanteras av Tailwind) */
+:root {
+  /* Ljusläge (standard) */
+  --color-primary: #512BD4;
+  --color-primary-light: #ac99ea;
+  --color-primary-dark: #2B0B98;
+  --color-primary-text: #242424;
+  --color-secondary: #DFD8F7;
+  --color-secondary-dark-text: #9880e5;
+
+  --color-brand-red: #db0000;
+  --color-accent: #3498DB;
+  --color-accent-dark: #004079;
+
+  --color-background-light: #F2F2F2;
+  --color-background-dark: #17171a; /* Mörkt läge bakgrund */
+  --color-light-on-dark-background: #C3C3C3; /* Ljus text på mörk bakgrund */
+  --color-dark-on-light-background: #0D0D0D; /* Mörk text på ljus bakgrund */
+  --color-light-secondary-background: #E0E0E0;
+  --color-dark-secondary-background: #222228;
+
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-magenta: #D600AA;
+  --color-midnight-blue: #190649;
+  --color-off-black: #1f1f1f;
+
+  --color-gray-100: #E1E1E1;
+  --color-gray-200: #C8C8C8;
+  --color-gray-300: #ACACAC;
+  --color-gray-400: #919191;
+  --color-gray-500: #6E6E6E;
+  --color-gray-600: #404040;
+  --color-gray-900: #212121;
+  --color-gray-950: #141414;
+
+  --color-dark-blue-gray: #2C3E50;
+  --color-medium-blue-gray: #57687c;
+  --color-light-blue-gray: #b4c7dd;
+  --color-text-light-mode: #FFFFFF;
+  --color-text-dark-mode: #e0e0e0;
+  --color-deep-dark-background: #1A2A33;
+  --color-darker-background: #2a3a43;
+  --color-dark-background-accent: #42525c;
+
+  /* Standard typografi och spacing som CSS-variabler för SCSS */
+  --font-stack-primary: 'Poppins', sans-serif;
+  --font-stack-secondary: 'Open Sans', sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.6;
+  --spacing-unit: 1rem;
+  --padding-small: 0.5rem;
+  --padding-medium: 1rem;
+  --padding-large: 1.5rem;
+  --border-radius: 8px;
+  --border-radius-small: 4px;
+  --box-shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --box-shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.2);
+  --transition-speed: 0.3s;
+  --transition-ease: ease-in-out;
+}
+
+/* Mörkt läge färger */
+.dark {
+  --color-primary: #ac99ea;
+  --color-primary-light: #512BD4;
+  --color-primary-dark: #190649;
+  --color-primary-text: #FFFFFF;
+  --color-secondary: #222228;
+  --color-secondary-dark-text: #DFD8F7;
+
+  --color-brand-red: #ff4a4a;
+
+  --color-accent: #64B5F6;
+  --color-accent-dark: #005691;
+
+  --color-background-light: #1A2A33;
+  --color-dark-on-light-background: #E0E0E0;
+  --color-light-secondary-background: #2a3a43;
+  
+  --color-white: #242424;
+  --color-black: #FFFFFF;
+
+  --color-gray-100: #404040;
+  --color-gray-200: #6E6E6E;
+  --color-gray-300: #919191;
+  --color-gray-400: #ACACAC;
+  --color-gray-500: #C8C8C8;
+  --color-gray-600: #E1E1E1;
+  --color-gray-900: #F2F2F2;
+  --color-gray-950: #FFFFFF;
+
+  --color-dark-blue-gray: #DFD8F7;
+  --color-medium-blue-gray: #b4c7dd;
+  --color-light-blue-gray: #57687c;
+  --color-text-light-mode: #242424;
+  --color-text-dark-mode: #FFFFFF;
+  --color-deep-dark-background: #F2F2F2;
+  --color-darker-background: #E0E0E0;
+  --color-dark-background-accent: #ac99ea;
+}
+
+/* Grundläggande CSS-regler som använder CSS-variablerna */
+body {
+  font-family: var(--font-stack-primary);
+  line-height: var(--line-height-base);
+  background-color: var(--color-background-light); /* Ljusläge default */
+  color: var(--color-dark-on-light-background); /* Mörk text default */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark {
+  background-color: var(--color-background-dark);
+  color: var(--color-light-on-dark-background);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
